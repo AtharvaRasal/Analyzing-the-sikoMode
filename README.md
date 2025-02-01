@@ -1,4 +1,4 @@
-# Analyzing-the-Malware
+# Analyzing-the-sikoMode
 
 For this part, we will be analyzing the Zeus banking trojan. First, some background information - basically what happened, and we will be overviewing the analysis tools. Then we go and dissect our malware, provision our lab, and conduct our analysis, which includes downloading the Trojan, labeling the malware, and going through basic static and dynamic analysis with reporting and indicators of compromise.
 
