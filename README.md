@@ -60,24 +60,6 @@ Attackers may exfiltrate business-critical data or launch ransomware attacks.
  - Procmon (Process Monitoring)
 
 
-I'll add findings from CyberChef (data decoding) and Procmon (process monitoring) to the report. Here’s the updated SikoMode Malware Analysis Report incorporating all tools.
-
-SikoMode Malware Analysis Report
-Author: [Your Name]
-Date: [Date of Report]
-
-1. Introduction
-1.1 Overview
-SikoMode is an information-stealing malware written in Nim, first discovered in July 2023. It primarily targets 64-bit Windows systems, using stealthy techniques to evade detection and steal sensitive data such as stored credentials, cookies, and clipboard contents.
-
-1.2 Objective
-This report presents a technical analysis of SikoMode malware using:
-
-PEStudio (Static Analysis)
-Capa (Behavioral Analysis)
-Cutter (Reverse Engineering)
-CyberChef (Data Decoding)
-Procmon (Process Monitoring)
 
 <h3>Static Analysis (PEStudio)</h3>
 
