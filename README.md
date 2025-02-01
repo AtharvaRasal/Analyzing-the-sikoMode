@@ -78,12 +78,15 @@ Networking: Uses `WinInet.dll` for HTTP communication (likely C2 server connecti
 Process Injection: Calls `CreateRemoteThread` and `WriteProcessMemory`.
 Persistence: Modifies Windows Registry (`advapi32.dll`).
 
+![pestudio1](https://github.com/user-attachments/assets/3fd78d1d-0b99-419d-bdf8-ded7f9a5eca6)
+
 ✅ Strings Analysis
 
 Base64-encoded strings found (likely obfuscated C2 addresses).
 Contains references to clipboard monitoring and password storage locations.
 
-![pestudio1](https://github.com/user-attachments/assets/3fd78d1d-0b99-419d-bdf8-ded7f9a5eca6)
+![pestudio 2](https://github.com/user-attachments/assets/672374c2-af06-4fd3-a112-c0e83961c3a9)
+
 
 
 <h3>Behavioral Analysis (Capa)</h3>
@@ -107,6 +110,9 @@ Captures clipboard contents and potential cryptocurrency wallets.
 Uses CreateRemoteThread for code injection into legitimate processes.
 Hides registry modifications by changing Windows Event Logging settings.
 
+![capa](https://github.com/user-attachments/assets/0d81d400-389a-4fe1-9834-009c5cebc8e6)
+
+
 <h3>Reverse Engineering (Cutter)</h3>
 
 Cutter (Radare2 GUI) was used for disassembly and code analysis.
@@ -117,14 +123,15 @@ Cutter (Radare2 GUI) was used for disassembly and code analysis.
 
 The malware verifies internet connectivity before executing its payload.
 
-✅ Decryption Routine
-
-Detected an XOR-based decryption loop, used to decode hidden strings (C2 addresses, commands).
-
 ✅ Persistence Mechanism
 
 Identified Registry modifications (RegSetValueExA) to run on startup.
 Possible scheduled task creation for persistence.
+
+This first calls the killswitch URL, if this cant connect it will run houdini to delete the file. If it can make a successful connection after files have been exfiltrated it will delete itself. Finally if this loses connectivity to the exfiltration URL this will run houdini and delete itself.
+
+![cutter](https://github.com/user-attachments/assets/efcf1d5b-8cf5-4769-8b2c-4ec5218b5f79)
+
 
 <h3>Data Decoding & Obfuscation Analysis (CyberChef)</h3>
 
@@ -136,6 +143,9 @@ CyberChef was used to decode obfuscated strings found in the binary.
 
 Extracted C2 domain and IP addresses.
 Found command keywords, likely for executing remote instructions.
+
+![cyberchef](https://github.com/user-attachments/assets/d9128810-0e2a-42bc-a6d9-184dd4a47d75)
+
 
 ✅ XOR & ROT13 Decryption
 
@@ -153,6 +163,9 @@ Procmon (Process Monitor) was used to observe the malware’s runtime behavior.
 Drops a temporary payload in %AppData% or %Temp%.
 Deletes itself after execution to evade detection.
 
+![proc1](https://github.com/user-attachments/assets/1bd13ad0-77af-40f0-90cb-671a35aec28e)
+
+
 ✅ Registry Modifications
 
 Adds an AutoRun key (HKCU\Software\Microsoft\Windows\CurrentVersion\Run).
@@ -162,6 +175,9 @@ Modifies Windows Defender settings to disable real-time protection.
 
 Sends HTTP requests to C2 (using WinInet.dll).
 Uses DNS queries to resolve external servers (detected using Wireshark).
+
+![proc2](https://github.com/user-attachments/assets/8c4e9766-d63b-4852-84fc-c7726e27f478)
+
 
 <h3>Conclusion</h3>
 
