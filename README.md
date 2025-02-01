@@ -165,5 +165,7 @@ Uses DNS queries to resolve external servers (detected using Wireshark).
 SikoMode is a stealthy, information-stealing malware that utilizes multiple evasion techniques:
 
 ✅ Uses process injection to run inside legitimate Windows processes.
+
 ✅ Self-deletes if no internet is detected, reducing forensic evidence.
+
 ✅ Steals credentials, clipboard data, and browser session cookies.
