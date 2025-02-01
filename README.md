@@ -83,6 +83,9 @@ Persistence: Modifies Windows Registry (`advapi32.dll`).
 Base64-encoded strings found (likely obfuscated C2 addresses).
 Contains references to clipboard monitoring and password storage locations.
 
+![pestudio1](https://github.com/user-attachments/assets/3fd78d1d-0b99-419d-bdf8-ded7f9a5eca6)
+
+
 <h3>Behavioral Analysis (Capa)</h3>
 
 Capa was used to analyze the malware’s capabilities.
