@@ -163,8 +163,6 @@ Procmon (Process Monitor) was used to observe the malware’s runtime behavior.
 Drops a temporary payload in %AppData% or %Temp%.
 Deletes itself after execution to evade detection.
 
-![proc1](https://github.com/user-attachments/assets/1bd13ad0-77af-40f0-90cb-671a35aec28e)
-
 
 ✅ Registry Modifications
 
